@@ -16,7 +16,9 @@ func startProc(cmdPath []string, output io.Writer) (*exec.Cmd, error) {
 
 	if err := c.Start(); err != nil {
 		// Backoff and try again in some time
-		time.Sleep(1 * time.Second)
+		sleepT := 1 * time.Second
+		log.Printf("Sleeping for %d and then retry. ")
+		time.Sleep(sleepT)
 		return nil, errors.Wrap(err, "Error starting process. Will sleep and retry")
 	}
 	return c, nil
