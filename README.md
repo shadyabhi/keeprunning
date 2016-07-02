@@ -11,18 +11,21 @@ This makes sure that a process is always running on a system.
 * Watches a process and makes sure that it restarts a process if it does.
 * Periodic restarts of processses that are misbehaving. (optional)
 
-## Usage
+## Installation
 
 ```
-➜ $?=2 /Users/arastogi/ % ./keeprunning -h
-Usage of ./keeprunning:
+➜ $?=0 /Users/arastogi [ 4:29PM] % go get github.com/shadyabhi/keeprunning
+
+>>>  6s elasped...
+➜ $?=0 /Users/arastogi [ 4:29PM] % keeprunning -h
+Usage of keeprunning:
   -cmd string
         Path to external binary that will be executed/monitored
   -uptime int
         Restart process after x seconds. (Default: 0, don't restart). x=<0 means don't try restarting.
 
->>>  1s elasped...
-➜ $?=2 /Users/arastogi/ %
+>>>  0s elasped...
+➜ $?=2 /Users/arastogi [ 4:29PM] %
 ```
 
 ## Examples
